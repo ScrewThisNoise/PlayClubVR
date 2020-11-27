@@ -40,11 +40,8 @@ namespace PlayClubVR
 
         public void OnApplicationStart()
         {
-            if (Environment.CommandLine.Contains("--vr"))
-            {
-                var manager = VRManager.Create<PlayClubInterpreter>(new PlayClubContext());
-                manager.SetMode<PlayClubSeatedMode>();
-            }
+            var manager = VRManager.Create<PlayClubInterpreter>(new PlayClubContext());
+            manager.SetMode<PlayClubSeatedMode>();
             if(Environment.CommandLine.Contains("--verbose"))
             {
                 Logger.Level = Logger.LogMode.Debug;
