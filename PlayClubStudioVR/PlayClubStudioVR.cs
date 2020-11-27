@@ -41,11 +41,8 @@ namespace PlayClubStudioVR
 
         public void OnApplicationStart()
         {
-            if (Environment.CommandLine.Contains("--vr"))
-            {
-                var manager = VRManager.Create<StudioInterpreter>(new PlayClubContext());
-                manager.SetMode<StudioSeatedMode>();
-            }
+            var manager = VRManager.Create<StudioInterpreter>(new PlayClubContext());
+            manager.SetMode<StudioSeatedMode>();
             if (Environment.CommandLine.Contains("--verbose"))
             {
                 Logger.Level = Logger.LogMode.Debug;
